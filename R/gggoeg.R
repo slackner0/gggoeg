@@ -20,6 +20,7 @@
 #' @param order Optional, rearranges the order of the returned palette.
 #'
 #' @return a vector of GÖG colours
+#' @import grDevices
 goeg.colours <- function(n=NULL, set=NULL, grey=TRUE, order=NULL) {
 
   set <- match.arg(set, c('normal', 'paired', 'tripled'))
@@ -85,6 +86,7 @@ goeg.colours <- function(n=NULL, set=NULL, grey=TRUE, order=NULL) {
 #' @param ... additional ggplot theme parameters that overwrite or supplement the GÖG theme
 #'
 #' @return an (incomplete) ggplot2 theme
+#' @import ggplot2
 theme_goeg <- function(...) {
 
   theme_get() +
@@ -121,6 +123,7 @@ theme_goeg <- function(...) {
 #' @return a ggplot2 discrete fill scale
 #'
 #' @seealso goeg.colours(), scale_fill_manual()
+#' @import ggplot2
 scale_fill_goeg <- function(n=NULL, set='normal', grey=TRUE, order=NULL, ...) {
   scale_fill_manual(values=goeg.colours(n=n, set=set, grey=grey, order=order), ...)
 }
@@ -136,6 +139,7 @@ scale_fill_goeg <- function(n=NULL, set='normal', grey=TRUE, order=NULL, ...) {
 #' @return a ggplot2 discrete colour scale
 #'
 #' @seealso goeg.colours(), scale_colour_manual()
+#' @import ggplot2
 scale_colour_goeg <- function(n=NULL, set='normal', grey=TRUE, order=NULL, ...) {
   scale_colour_manual(values=goeg.colours(n=n, set=set, grey=grey, order=order), ...)
 }
@@ -151,6 +155,7 @@ scale_colour_goeg <- function(n=NULL, set='normal', grey=TRUE, order=NULL, ...) 
 #' @return a ggplot2 discrete colour scale
 #'
 #' @seealso goeg.colours(), scale_colour_manual()
+#' @import ggplot2
 scale_color_goeg <- function(n=NULL, set='normal', grey=TRUE, order=NULL, ...) {
   scale_colour_goeg(values=goeg.colours(n=n, set=set, grey=grey, order=order), ...)
 }
