@@ -3,8 +3,6 @@
 
 .onLoad <- function(libname, pkgname) {
 
-  requireNamespace("grDevices")
-
   grDevices::windowsFonts(LucidaSansUnicode = grDevices::windowsFont("TT Lucida Sans Unicode"))
 
 }
@@ -20,6 +18,7 @@
 #' @param order Optional, rearranges the order of the returned palette.
 #'
 #' @return a vector of GÖG colours
+#' @export
 #' @import grDevices
 goeg.colours <- function(n=NULL, set=NULL, grey=TRUE, order=NULL) {
 
@@ -86,6 +85,7 @@ goeg.colours <- function(n=NULL, set=NULL, grey=TRUE, order=NULL) {
 #' @param ... additional ggplot theme parameters that overwrite or supplement the GÖG theme
 #'
 #' @return an (incomplete) ggplot2 theme
+#' @export
 #' @import ggplot2
 theme_goeg <- function(...) {
 
@@ -121,6 +121,7 @@ theme_goeg <- function(...) {
 #' @param ... additional parameters passed to scale_fill_manual
 #'
 #' @return a ggplot2 discrete fill scale
+#' @export
 #'
 #' @seealso goeg.colours(), scale_fill_manual()
 #' @import ggplot2
@@ -137,6 +138,7 @@ scale_fill_goeg <- function(n=NULL, set='normal', grey=TRUE, order=NULL, ...) {
 #' @param ... additional parameters passed to scale_colour_manual
 #'
 #' @return a ggplot2 discrete colour scale
+#' @export
 #'
 #' @seealso goeg.colours(), scale_colour_manual()
 #' @import ggplot2
@@ -153,6 +155,7 @@ scale_colour_goeg <- function(n=NULL, set='normal', grey=TRUE, order=NULL, ...) 
 #' @param ... additional parameters passed to scale_colour_manual
 #'
 #' @return a ggplot2 discrete colour scale
+#' @export
 #'
 #' @seealso goeg.colours(), scale_colour_manual()
 #' @import ggplot2
